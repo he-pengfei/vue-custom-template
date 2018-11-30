@@ -9,6 +9,6 @@ function pubilc(method, url, data){
 
 export const login = ({ commit }, data)=>{
     let point = "/travel/"
-    pubilc("POST", point, data)
+    return  pubilc("POST", point, data)
 
 }

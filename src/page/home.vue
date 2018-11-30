@@ -34,7 +34,6 @@
 </template>
 <script>
 import Vmenu from "../components/menu.vue";
-import {fetch} from "../middleware/request.js";
 import requestType from "../middleware/classRequest.js";
 export default {
   components: {
