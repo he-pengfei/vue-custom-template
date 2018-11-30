@@ -1,14 +1,14 @@
 import requestType from "../middleware/classRequest";
 import * as types from './actionTypes';
 
-function pubilc(method,url,){
+function pubilc(method, url, data){
 
 
 
 }
 
-const actions ={
-    login({commit},data){
-             
-    }
+export const login = ({ commit }, data)=>{
+    let point = "/travel/"
+    pubilc("POST", point, data)
+
 }
