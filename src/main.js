@@ -6,6 +6,7 @@ import 'element-ui/lib/theme-chalk/index.css';
 import VueI18n from 'vue-i18n';
 import enLocale from 'element-ui/lib/locale/lang/en';
 import "./assets/font/iconfont.css";
+import store from "./store/index";
 
 //import zhLocale from 'element-ui/lib/locale/lang/zh-CN';
 import { messages } from './data/test';
@@ -25,6 +26,7 @@ var i18n = new VueI18n({
 new Vue({
   router,
   i18n,
+  store,
   render: h => h(App),
   
 }).$mount('#app')

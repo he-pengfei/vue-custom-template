@@ -35,6 +35,7 @@
 <script>
 import Vmenu from "../components/menu.vue";
 import requestType from "../middleware/classRequest.js";
+import {mapActions} from "vuex";
 export default {
   components: {
     "v-menu": Vmenu
@@ -44,6 +45,7 @@ export default {
   },
 
   methods: {
+    ...mapActions(['login']),
     handleCommand(command) {
       if (command == "sign") {
         sessionStorage.removeItem("userInfo");
@@ -78,16 +80,13 @@ export default {
     }
   },
   created() {
-    console.log('====================================')
-    console.log(requestType.post(),"====>")
-    console.log('====================================')
-    // let userInfo = sessionStorage.getItem("userInfo");
-    // if (userInfo) {
-    //   //let websocket = new WebSocket("");
-    //   console.log(this.initWebpack(), "websocket");
-    // } else {
-    //   this.$router.push("/login");
-    // }
+    this.login("hahha")
+    let userInfo = sessionStorage.getItem("userInfo");
+    if (userInfo) {
+      console.log(this.initWebpack(), "websocket");
+    } else {
+      this.$router.push("/login");
+    }
   }
 };
 </script>

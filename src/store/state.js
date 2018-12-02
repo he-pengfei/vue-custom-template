@@ -1,3 +1,5 @@
-export const state = {
-    login:{}
+//登录数据
+export const login = {
+    id:"",
+    name:"",
 }

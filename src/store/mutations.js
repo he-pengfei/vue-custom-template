@@ -1,6 +1,7 @@
 import * as types from './actionTypes';
-export const mutations = {
+export  const mutations = {
     [types.Login](state, res) {
-        state.login = res
+        console.log(state,"00000")
+        //state.login = res
     }
 }
