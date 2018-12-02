@@ -13,7 +13,7 @@ export function fetch(method, url, params){
         data: method === "POST" ? JSON.stringify(params):{}
     }
     return new Promise((resolve, reject)=>{
-        resolve(123)
+        resolve({id:"123",name:"xiaofeifei"})
 
         // axios(Json).then(res=>{
         //     resolve(res)

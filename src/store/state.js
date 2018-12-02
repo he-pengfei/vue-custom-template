@@ -1,5 +1,4 @@
 //登录数据
-export const login = {
-    id:"",
-    name:"",
+export const state = {
+    login:{}
 }

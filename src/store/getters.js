@@ -1,3 +1,5 @@
-export const login = state => {
-    return state.login
+const getters = {
+    login:state=>state.state.login
 }
+
+export default getters

@@ -1,4 +1,4 @@
-import * as getters from "./getters";
+import getters from "./getters";
 import {mutations} from "./mutations";
 import * as state from "./state";
 import * as actions from "./action";

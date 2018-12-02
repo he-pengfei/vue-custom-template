@@ -8,15 +8,13 @@ function pubilc(method, url, data){
         
     }else{
 
-     return   requestType.get(method,url)
+      return   requestType.get(method,url)
     }
 }
 
- export const  login = async ({ commit }, data)=>{
-   console.log(data,"data")
+export const  login = async ({ commit }, data)=>{
 
-    return
     let point = "/travel/"
-    commit([types.Login],await pubilc("POST", point, data))
+    commit(types.Login,await pubilc("POST", point, data))
     
 };

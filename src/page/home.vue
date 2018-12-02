@@ -35,7 +35,7 @@
 <script>
 import Vmenu from "../components/menu.vue";
 import requestType from "../middleware/classRequest.js";
-import {mapActions} from "vuex";
+import {mapActions,mapGetters} from "vuex";
 export default {
   components: {
     "v-menu": Vmenu
@@ -44,6 +44,14 @@ export default {
     return {};
   },
 
+  computed: {
+    login(){
+      console.log(this.$store,"==============>")
+    }
+    // ...mapGetters([
+    //   'login'
+    // ])
+  },
   methods: {
     ...mapActions(['login']),
     handleCommand(command) {
