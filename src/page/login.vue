@@ -54,6 +54,16 @@ export default {
             
 
     },
+    watch:{
+        resLogin(newstate,oldstate){
+            console.log(oldstate,"old")
+            console.log(newstate,"new")
+            // if(e.id=="123"){
+
+            //  //this.$router.push("/")
+            // }      
+        }
+    },
     methods: {
 
      ...mapActions([
@@ -64,12 +74,19 @@ export default {
                 user:this.user,
                 password:this.password
            }
-           console.log(this.reqLogin(data),"this.reqLogin(data)")
+           sessionStorage.setItem("userInfo",data)
+           this.reqLogin(data)
            //this.$store.dispatch("reqLogin",data)
-           //sessionStorage.setItem("userInfo",data)
+           //
            //this.reqLogin({id:123,name:"小飞飞"})
-           //this.$router.push("/")
+           
        }
+    },
+    beforeUpdate(){
+        console.log(this.resLogin,"resLogin===============>之前")
+    },
+    updated(e){
+        console.log(this.resLogin,"resLogin===============>")
     }
 };
 </script>

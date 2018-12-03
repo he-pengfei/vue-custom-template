@@ -16,10 +16,5 @@ export default{
     async reqLogin ({ commit }, data){   //登录
         let point = ""
         commit(types.Login, await pubilc("POST", point, data))
-
     }
-
-
-
-
 }
