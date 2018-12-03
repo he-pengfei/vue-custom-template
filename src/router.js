@@ -4,6 +4,8 @@ const Home = ()=> import("./page/home.vue");
 const Login = () => import("./page/login.vue");
 const Table = () => import("./page/table.vue");
 
+const Chart = () => import("./page/chart.vue");
+
 
 Vue.use(VueRouter)
 
@@ -12,7 +14,9 @@ const router = new VueRouter({
         { path: '/', component: Home,
          children:[
             
-             { path: '/table', component: Table }
+             { path: '/table', component: Table },
+             { path: '/chart', component: Chart },
+             
          ]
        
        },
@@ -21,5 +25,6 @@ const router = new VueRouter({
     
     ]
 })
+
 
 export default router

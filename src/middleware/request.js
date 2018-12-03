@@ -1,9 +1,11 @@
-const HTTP = "http://";
+const HTTP = "http://192.168.0.41:9999/";
 import axios from 'axios'
-export function fetch(method, url, params){
+export function fetch(method, url , params){
+
+    console.log(method,"url")
     let requestURl = HTTP + url;
     let header = {
-        'Accept': 'application/json;charset=UTF-8',
+        'Accept': 'application/json',
         'Content-Type': 'application/json'
     }
     let Json = {
@@ -12,14 +14,15 @@ export function fetch(method, url, params){
         header: header,
         data: method === "POST" ? JSON.stringify(params):{}
     }
-    return new Promise((resolve, reject)=>{
-        resolve({id:"123",name:"xiaofeifei"})
 
-        // axios(Json).then(res=>{
-        //     resolve(res)
-        // }).catch(error=>{
-        //     reject(error)
-        // })
+    return new Promise((resolve, reject)=>{
+        //resolve({id:"123",name:"xiaofeifei"})
+
+        axios(Json).then(res=>{
+            resolve(res.data)
+        }).catch(error=>{
+            reject(error)
+        })
 
     })
 }

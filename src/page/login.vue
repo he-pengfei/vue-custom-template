@@ -23,9 +23,10 @@
                 <div>忘记密码?</div>
                 <div>注册</div>
             </div>
-            <div class="btn" @click="onLogin">
+            <div class="btn" @click="onLogin()">
                 登 录
             </div>
+            <div>{{this.resLogin.id || "123"}}</div>
 
            <!-- <el-button type="primary" class="btn" >登录</el-button> -->
         </div>
@@ -34,6 +35,7 @@
     
 </template>
 <script>
+import {mapActions,mapGetters} from "vuex";
 export default {
     data() {
         return {
@@ -41,18 +43,35 @@ export default {
            password:"123456"
         };
     },
+    computed: {
+        ...mapGetters(['resLogin']),
+        // resLogin(){
+        //     return 
+        // }
 
+        //console.log()
+
+            
+
+    },
     methods: {
+
+     ...mapActions([
+         'reqLogin'
+      ]),
        onLogin(){
            let data = {
                 user:this.user,
                 password:this.password
            }
-           sessionStorage.setItem("userInfo",data)
-           this.$router.push("/")
+           console.log(this.reqLogin(data),"this.reqLogin(data)")
+           //this.$store.dispatch("reqLogin",data)
+           //sessionStorage.setItem("userInfo",data)
+           //this.reqLogin({id:123,name:"小飞飞"})
+           //this.$router.push("/")
        }
     }
-    };
+};
 </script>
 <style scoped >
     .body {

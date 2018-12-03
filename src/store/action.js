@@ -4,17 +4,22 @@ import * as types from './actionTypes';
 function pubilc(method, url, data){
     if(method==="POST"){
 
-     return   requestType.post(method,url, data)
+     return   requestType.post(url, data)
         
     }else{
 
-      return   requestType.get(method,url)
+      return   requestType.get(url)
     }
 }
 
-export const  login = async ({ commit }, data)=>{
+export default{
+    async reqLogin ({ commit }, data){   //登录
+        let point = ""
+        commit(types.Login, await pubilc("POST", point, data))
 
-    let point = "/travel/"
-    commit(types.Login,await pubilc("POST", point, data))
-    
-};
+    }
+
+
+
+
+}

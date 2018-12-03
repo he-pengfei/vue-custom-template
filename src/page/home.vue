@@ -8,7 +8,9 @@
         </div>
         <div class="right">
             <div class="top">
-                <div>Manage System</div>
+                <!-- <div>Manage System</div> -->
+
+                <!-- <div style="color:#000">{{this.resLogin.id}}</div> -->
                 <div class="userInfo">
                     <el-dropdown @command="handleCommand">
                         <span class="el-dropdown-link">
@@ -34,26 +36,19 @@
 </template>
 <script>
 import Vmenu from "../components/menu.vue";
-import requestType from "../middleware/classRequest.js";
-import {mapActions,mapGetters} from "vuex";
+
 export default {
   components: {
     "v-menu": Vmenu
   },
   data() {
-    return {};
+    return {
+    };
   },
 
-  computed: {
-    login(){
-      console.log(this.$store,"==============>")
-    }
-    // ...mapGetters([
-    //   'login'
-    // ])
-  },
+
   methods: {
-    ...mapActions(['login']),
+
     handleCommand(command) {
       if (command == "sign") {
         sessionStorage.removeItem("userInfo");
@@ -70,7 +65,7 @@ export default {
       this.websock.onerror = this.websocketerror;
     },
     websocketopen() {
-      //打开
+     
       console.log("WebSocket连接成功");
     },
     websocketonmessage(e) {
@@ -88,7 +83,7 @@ export default {
     }
   },
   created() {
-    this.login("hahha")
+    
     let userInfo = sessionStorage.getItem("userInfo");
     if (userInfo) {
       console.log(this.initWebpack(), "websocket");
