@@ -55,38 +55,38 @@ export default {
         this.$router.push("/login");
       }
     },
-    initWebpack() {
-      //初始化websocket
-      const wsuri = "wss://echo.websocket.org";
-      this.websock = new WebSocket(wsuri); //这里面的this都指向vue
-      this.websock.onopen = this.websocketopen;
-      this.websock.onmessage = this.websocketonmessage;
-      this.websock.onclose = this.websocketclose;
-      this.websock.onerror = this.websocketerror;
-    },
-    websocketopen() {
+    // initWebpack() {
+    //   //初始化websocket
+    //   const wsuri = "wss://echo.websocket.org";
+    //   this.websock = new WebSocket(wsuri); //这里面的this都指向vue
+    //   this.websock.onopen = this.websocketopen;
+    //   this.websock.onmessage = this.websocketonmessage;
+    //   this.websock.onclose = this.websocketclose;
+    //   this.websock.onerror = this.websocketerror;
+    // },
+    // websocketopen() {
      
-      console.log("WebSocket连接成功");
-    },
-    websocketonmessage(e) {
-      //数据接收
-      console.log(e);
-      this.productinfos = JSON.parse(e.data);
-    },
-    websocketclose() {
-      //关闭
-      console.log("WebSocket关闭");
-    },
-    websocketerror() {
-      //失败
-      console.log("WebSocket连接失败");
-    }
+    //   console.log("WebSocket连接成功");
+    // },
+    // websocketonmessage(e) {
+    //   //数据接收
+    //   console.log(e);
+    //   this.productinfos = JSON.parse(e.data);
+    // },
+    // websocketclose() {
+    //   //关闭
+    //   console.log("WebSocket关闭");
+    // },
+    // websocketerror() {
+    //   //失败
+    //   console.log("WebSocket连接失败");
+    // }
   },
   created() {
     
     let userInfo = sessionStorage.getItem("userInfo");
     if (userInfo) {
-      console.log(this.initWebpack(), "websocket");
+      // console.log(this.initWebpack(), "websocket");
     } else {
       this.$router.push("/login");
     }

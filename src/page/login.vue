@@ -58,10 +58,10 @@ export default {
         resLogin(newstate,oldstate){
             console.log(oldstate,"old")
             console.log(newstate,"new")
-            // if(e.id=="123"){
+            if(e.id=="123"){
 
-            //  //this.$router.push("/")
-            // }      
+             //this.$router.push("/")
+            }      
         }
     },
     methods: {
@@ -70,12 +70,13 @@ export default {
          'reqLogin'
       ]),
        onLogin(){
-           let data = {
-                user:this.user,
-                password:this.password
-           }
-           sessionStorage.setItem("userInfo",data)
-           this.reqLogin(data)
+           this.$router.push("/")
+        //    let data = {
+        //         user:this.user,
+        //         password:this.password
+        //    }
+        //    sessionStorage.setItem("userInfo",data)
+        //    this.reqLogin(data)
            //this.$store.dispatch("reqLogin",data)
            //
            //this.reqLogin({id:123,name:"小飞飞"})

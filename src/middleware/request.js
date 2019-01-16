@@ -16,13 +16,13 @@ export function fetch(method, url , params){
     }
 
     return new Promise((resolve, reject)=>{
-        //resolve({id:"123",name:"xiaofeifei"})
+        resolve({id:"123",name:"xiaofeifei"})
 
-        axios(Json).then(res=>{
-            resolve(res.data)
-        }).catch(error=>{
-            reject(error)
-        })
+        // axios(Json).then(res=>{
+        //     resolve(res.data)
+        // }).catch(error=>{
+        //     reject(error)
+        // })
 
     })
 }

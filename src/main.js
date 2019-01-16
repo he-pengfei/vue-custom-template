@@ -25,15 +25,16 @@ var i18n = new VueI18n({
 
 
 router.beforeEach((to, from, next) => {
-  if (to.path =="/table"){
-    next(false)
-  }else{
-    next()
-  }
+  // if (to.path =="/table"){
+  //   next(false)
+  // }else{
+  //   next()
+  // }
   
   //console.log("to====>", to)  //去往哪个页面？
   //console.log("from====>", from) //当前离开的页面路由
   //console.log("next====>", next)
+  next()
 })
 
 
